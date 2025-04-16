@@ -1,26 +1,26 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar"
-import Catalog from "./pages/Catalog"
-import ProductDetail from "./pages/ProductDetail"
-import CategoryProducts from "./pages/CategoryProducts"
+import { Routes, Route } from "react-router-dom"
+import NavBar from "./components/NavBar/NavBar"
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import Checkout from "./components/Checkout/Checkout"
+import Cart from "./components/Cart/Cart"
 import "./App.css"
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="app">
-        <Navbar />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Catalog />} />
-            <Route path="/category/:categoryId" element={<CategoryProducts />} />
-            <Route path="/item/:id" element={<ProductDetail />} />
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
+    <div className="app">
+      <NavBar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a TechComponents" />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
 export default App
-
