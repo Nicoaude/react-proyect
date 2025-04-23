@@ -2,6 +2,7 @@
 
 ## Descripción
 App estilo e-commerce basado en una tienda de computación.
+Gif probando la tienda: https://i.imgur.com/8tiF0zJ.gif
 
 ## Componentes principales
 - **NavBar**: Barra de navegación con categorías y acceso al carrito
